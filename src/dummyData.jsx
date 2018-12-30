@@ -115,14 +115,23 @@ export const PendingTasks = ({ currentUser }) => {
             Que se pueda usar como invitado para al menos descargarse el listado
             en xls
           </li>
+          <li>Que se pueda exportar a varios formatos</li>
+          <li>
+            Que la exportanción funcione correctamente en todos los navegadores
+          </li>
           <li>
             Que se pueda acceder con usuario y clave para ver las credenciales
             almacenadas previamente
           </li>
-
-          <li>.</li>
-          <li>.</li>
-          <li>.</li>
+          <li>
+            Que al hacerse click en Agregar, el primer campo tenga el foco con
+            el cursor
+          </li>
+          <li>
+            Que al hacerse click en Agregar, el botón guardar esté a la derecha
+            y sea el predeterminado
+          </li>
+          <li>Corregir alineación y ancho de los campos de los formularios</li>
           <li>.</li>
         </ul>
         <hr />
@@ -152,7 +161,9 @@ export const PendingTasks = ({ currentUser }) => {
             Que se muestre el campo Notas en los detalles de las credenciales
             seleccionadas
           </li>
-          <li style={{ textDecoration: "line-through" }}>.</li>
+          <li style={{ textDecoration: "line-through" }}>
+            Que se pueda exportar a txt
+          </li>
           <li style={{ textDecoration: "line-through" }}>.</li>
         </ul>
       </div>

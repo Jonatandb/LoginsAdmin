@@ -6,7 +6,7 @@ import DialogoDetalles from "../Detalles/DialogoDetalles";
 import Pie from "../Pie";
 import BotonAgregar from "../Agregar/BotonAgregar";
 import DialogoAgregar from "../Agregar/DialogoAgregar";
-
+import exportToXLS from "../../exporter";
 import { dummyCredentialsList } from "../../dummyData";
 import { PendingTasks } from "../../dummyData";
 
@@ -55,7 +55,9 @@ class App extends React.Component {
   };
 
   handleExport = () => {
-    console.log("App -> handleExport()");
+    this.state.loginList &&
+      this.state.loginList.length > 0 &&
+      exportToXLS(this.state.loginList);
   };
 
   handleLogin = () => {
