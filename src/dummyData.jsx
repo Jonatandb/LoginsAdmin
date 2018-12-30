@@ -119,10 +119,7 @@ export const PendingTasks = ({ currentUser }) => {
             Que se pueda acceder con usuario y clave para ver las credenciales
             almacenadas previamente
           </li>
-          <li>
-            Que se muestre el campo Notas en los detalles de las credenciales
-            seleccionadas
-          </li>
+
           <li>.</li>
           <li>.</li>
           <li>.</li>
@@ -150,6 +147,10 @@ export const PendingTasks = ({ currentUser }) => {
           </li>{" "}
           <li style={{ textDecoration: "line-through" }}>
             Hacer que la opción para agregar credenciales muestre un form nuevo
+          </li>{" "}
+          <li style={{ textDecoration: "line-through" }}>
+            Que se muestre el campo Notas en los detalles de las credenciales
+            seleccionadas
           </li>
           <li style={{ textDecoration: "line-through" }}>.</li>
           <li style={{ textDecoration: "line-through" }}>.</li>
