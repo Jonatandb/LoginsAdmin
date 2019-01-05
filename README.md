@@ -5,5 +5,8 @@ Administrador de credenciales realizado durante mis prácticas con React para ap
 
 
 ## Preview
-![](preview.png?raw=true)
+[![Preview](preview.png?raw=true)](preview.png?raw=true)
+
+
+
 
