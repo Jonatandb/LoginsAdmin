@@ -5,4 +5,4 @@ Administrador de credenciales realizado durante mis prácticas con React para ap
 
 
 ## Preview
-[![](preview.png?raw=true "LoginsAdmin")](https://jonatandb-loginsadmin.netlify.com)
+[![Jonatandb](preview.png?raw=true "LoginsAdmin")](https://jonatandb-loginsadmin.netlify.com)
