@@ -105,6 +105,7 @@ export const PendingTasks = ({ currentUser }) => {
       <div style={{ color: "lightgray" }}>
         <br />A desarrollar:
         <ul>
+          <li>Refactor del diálogo Agregar para que esté todo en una Grid</li>
           <li>Opción para editar credenciales almacenadas</li>
           <li>Opción para eliminar credenciales</li>
           <li>
