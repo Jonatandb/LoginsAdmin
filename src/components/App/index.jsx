@@ -73,6 +73,9 @@ class App extends React.Component {
     this.setState(initalState);
   };
 
+  componentDidMount() {
+    this.handleLogin();
+  }
   render() {
     const itemToShow =
       this.state.showDetails !== -1 &&
