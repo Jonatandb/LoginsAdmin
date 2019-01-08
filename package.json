@@ -2,14 +2,12 @@
   "name": "loginsadmin",
   "version": "1.0.0",
   "description": "Administrador de credenciales simple y dinámico hecho con ❤ por Jonatandb.",
-  "keywords": [
-    "material",
-    "react"
-  ],
+  "keywords": ["react", "material-ui", "es6", "javascript"],
   "main": "src/index.js",
   "dependencies": {
     "@material-ui/core": "3.7.1",
     "@material-ui/icons": "3.0.1",
+    "axios": "0.18.0",
     "export-from-json": "1.1.1",
     "react": "16.5.2",
     "react-dom": "16.5.2",
@@ -22,10 +20,5 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "browserslist": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"]
 }
