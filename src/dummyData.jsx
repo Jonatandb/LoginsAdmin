@@ -1,62 +1,78 @@
 import React from "react";
-import axios from "axios";
+// import axios from "axios";
 
-class TestMysql extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      error: "",
-      data: null,
-      isLoading: false
-    };
-  }
+// class TestMysql extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       error: "",
+//       data: null,
+//       isLoading: false
+//     };
+//   }
 
-  componentDidMount() {
-    this.setState({ isLoading: true });
-    const url = "https://jonatandb01.000webhostapp.com/";
-    axios
-      .get(url)
-      .then(result =>
-        this.setState({
-          data: result.data,
-          isLoading: false
-        })
-      )
-      .catch(error =>
-        this.setState({
-          error,
-          isLoading: false
-        })
-      );
-  }
+//   componentDidMount() {
+//     this.setState({ isLoading: true });
+//     const url = "https://jonatandb01.000webhostapp.com/loginsservicename";
+//     //const url = "https://jonatandb01.000webhostapp.com/logindata?id=1";
+//     axios
+//       .get(url)
+//       .then(result =>
+//         this.setState({
+//           data: result.data,
+//           isLoading: false
+//         })
+//       )
+//       .catch(error =>
+//         this.setState({
+//           error,
+//           isLoading: false
+//         })
+//       );
+//   }
 
-  render() {
-    this.state.error &&
-      console.log("render(): this.state.error = ", this.state.error);
-    console.log(this.state.error);
-    this.state.data &&
-      console.log("render(): this.state.data = ", this.state.data);
+//   render() {
+//     this.state.error &&
+//       console.log("TestMysql - render(): this.state.error = ", this.state.error);
+//     console.log(this.state.error);
+//     this.state.data &&
+//       console.log("TestMysql - render(): this.state.data = ", this.state.data);
 
-    if (this.state.isLoading) {
-      return <p>Cargando...</p>;
-    }
+//     if (this.state.isLoading) {
+//       return <h3>TestMysql - Cargando...</h3>;
+//     }
 
-    return (
-      <>
-        <h3>TestMysql:</h3>
-        {this.state.error && <h2>Error: {JSON.stringify(this.state.error)}</h2>}
-      </>
-    );
-  }
-}
+//     if(this.state.error) {
+//       return (
+//         <h2>TestMysql - Error: {JSON.stringify(this.state.error)}</h2>
+//       );
+//     }
+
+//     return (
+//       <React.Fragment>
+//         <h3>TestMysql:</h3>
+//         <ul>
+//           {
+//             this.state.data && this.state.data.map(login => {
+//               return <li key={login.login_id}>{JSON.stringify(login)}</li>
+//             })
+//           }
+//         </ul>
+//       </React.Fragment>
+//     );
+//   }
+// }
 
 export const PendingTasks = ({ currentUser }) => {
   return currentUser !== "" ? (
-    <>
+    <React.Fragment>
       <div style={{ color: "gray" }}>
-        <TestMysql />
+        { /*<TestMysql />*/ }
         <br />A desarrollar:
         <ul>
+          <li>Hacer que el agregado de un login funcione aunque no se inicie sesión</li>
+          <li>Hacer que al clickear un login se muestren todos sus datos</li>
+          <li>Hacer que la búsqueda revise todos los campos</li>
           <li>Hacer funcional el login</li>
           <li>Refactor del diálogo Agregar para que esté todo en una Grid</li>
           <li>Opción para editar credenciales almacenadas</li>
@@ -92,6 +108,12 @@ export const PendingTasks = ({ currentUser }) => {
         {
           //   Completado:
           //   <ul>
+          //     <li></li>
+          //     <li></li>
+          //     <li></li>
+          //     <li></li>
+          //     <li>Creado archivo de configuración de acceso a base de datos</li>
+          //     <li>Creado archivo de conexión a base de datos</li>
           //     <li style={{ textDecoration: "line-through" }}>
           //       Al clickear en un sitio web de la lista, abrir un popup con los
           //       detalles
@@ -123,7 +145,7 @@ export const PendingTasks = ({ currentUser }) => {
           //   </ul>
         }
       </div>
-    </>
+    </React.Fragment>
   ) : null;
 };
 
@@ -135,95 +157,93 @@ export const dummyCredentialsList = [
     userName: "usuario@mail.com",
     password: "123456",
     notes: "Cuenta principal"
+  },
+  {
+    id: 1,
+    serviceName: "outlook",
+    serviceURL: "http://www.Outlook.com",
+    userName: "usuario@Outlook.com",
+    password: "123456",
+    notes: "Mail usado para Facebook"
+  },
+  {
+    id: 2,
+    serviceName: "netflix",
+    serviceURL: "http://www.Netflix.com",
+    userName: "John",
+    password: "123456",
+    notes: "Cuenta compartida"
+  },
+  {
+    id: 3,
+    serviceName: "gmail",
+    serviceURL: "http://www.Gmail.com",
+    userName: "usuario@Gmail.com",
+    password: "123456",
+    notes: "Mail alternativo del banco Nación"
+  },
+  {
+    id: 4,
+    serviceName: "santander",
+    serviceURL: "http://www.Santanderrio.com.ar",
+    userName: "usuario",
+    password: "123456",
+    notes: "Cuenta sueldo"
+  },
+  {
+    id: 5,
+    serviceName: "facebook",
+    serviceURL: "http://www.facebook.com",
+    userName: "usuario2@mail.com",
+    password: "1234566",
+    notes: "Cuenta pirata"
+  },
+  {
+    id: 6,
+    serviceName: "facebook",
+    serviceURL: "http://www.facebook.com",
+    userName: "usuario2@mail.com",
+    password: "1234566",
+    notes: "Tío"
+  },
+  {
+    id: 7,
+    serviceName: "facebook",
+    serviceURL: "http://www.facebook.com",
+    userName: "usuario2@mail.com",
+    password: "1234566",
+    notes: "Pagina de comidas"
+  },
+  {
+    id: 8,
+    serviceName: "facebook",
+    serviceURL: "http://www.facebook.com",
+    userName: "usuario2@mail.com",
+    password: "1234566",
+    notes: "Facebook viejo"
+  },
+  {
+    id: 9,
+    serviceName: "facebook",
+    serviceURL: "http://www.facebook.com",
+    userName: "usuario2@mail.com",
+    password: "1234566",
+    notes: "Perfil profesional"
+  },
+  {
+    id: 10,
+    serviceName: "facebook",
+    serviceURL: "http://www.facebook.com",
+    userName: "usuario2@mail.com",
+    password: "1234566",
+    notes: "Cuenta inaccesible"
+  },
+  {
+    id: 11,
+    serviceName: "Nación",
+    serviceURL: "http://www.nacion.com",
+    userName: "inversiones2018",
+    password: "1234566",
+    notes: "Plazos fijos en dólares"
   }
 ];
-
-//   {
-//     id: 1,
-//     serviceName: "outlook",
-//     serviceURL: "http://www.Outlook.com",
-//     userName: "usuario@Outlook.com",
-//     password: "123456",
-//     notes: "Mail usado para Facebook"
-//   },
-//   {
-//     id: 2,
-//     serviceName: "netflix",
-//     serviceURL: "http://www.Netflix.com",
-//     userName: "John",
-//     password: "123456",
-//     notes: "Cuenta compartida"
-//   },
-//   {
-//     id: 3,
-//     serviceName: "gmail",
-//     serviceURL: "http://www.Gmail.com",
-//     userName: "usuario@Gmail.com",
-//     password: "123456",
-//     notes: "Mail alternativo del banco Nación"
-//   },
-//   {
-//     id: 4,
-//     serviceName: "santander",
-//     serviceURL: "http://www.Santanderrio.com.ar",
-//     userName: "usuario",
-//     password: "123456",
-//     notes: "Cuenta sueldo"
-//   },
-//   {
-//     id: 5,
-//     serviceName: "facebook",
-//     serviceURL: "http://www.facebook.com",
-//     userName: "usuario2@mail.com",
-//     password: "1234566",
-//     notes: "Cuenta pirata"
-//   },
-//   {
-//     id: 6,
-//     serviceName: "facebook",
-//     serviceURL: "http://www.facebook.com",
-//     userName: "usuario2@mail.com",
-//     password: "1234566",
-//     notes: "Tío"
-//   },
-//   {
-//     id: 7,
-//     serviceName: "facebook",
-//     serviceURL: "http://www.facebook.com",
-//     userName: "usuario2@mail.com",
-//     password: "1234566",
-//     notes: "Pagina de comidas"
-//   },
-//   {
-//     id: 8,
-//     serviceName: "facebook",
-//     serviceURL: "http://www.facebook.com",
-//     userName: "usuario2@mail.com",
-//     password: "1234566",
-//     notes: "Facebook viejo"
-//   },
-//   {
-//     id: 9,
-//     serviceName: "facebook",
-//     serviceURL: "http://www.facebook.com",
-//     userName: "usuario2@mail.com",
-//     password: "1234566",
-//     notes: "Perfil profesional"
-//   },
-//   {
-//     id: 10,
-//     serviceName: "facebook",
-//     serviceURL: "http://www.facebook.com",
-//     userName: "usuario2@mail.com",
-//     password: "1234566",
-//     notes: "Cuenta inaccesible"
-//   },
-//   {
-//     id: 11,
-//     serviceName: "Nación",
-//     serviceURL: "http://www.nacion.com",
-//     userName: "inversiones2018",
-//     password: "1234566",
-//     notes: "Plazos fijos en dólares"
-//   }
-// ];

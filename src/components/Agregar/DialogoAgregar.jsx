@@ -1,20 +1,22 @@
 import React from "react";
 import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
+// import ListItem from "@material-ui/core/ListItem";
+// import ListItemText from "@material-ui/core/ListItemText";
 import DialogTitle from "@material-ui/core/DialogTitle";
-import DialogContentText from "@material-ui/core/DialogContentText";
+// import DialogContentText from "@material-ui/core/DialogContentText";
 import Dialog from "@material-ui/core/Dialog";
-import blue from "@material-ui/core/colors/blue";
+// import blue from "@material-ui/core/colors/blue";
 import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
+// import Typography from "@material-ui/core/Typography";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import SaveIcon from "@material-ui/icons/Save";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
-import TableHead from "@material-ui/core/TableHead";
+// import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
+
+const showLogs = false;
 
 const initialState = {
   id: -1,
@@ -29,13 +31,13 @@ class DialogoAgregar extends React.Component {
   state = initialState;
 
   handleClose = () => {
-    console.log("DialogoAgregar -> handleClose()");
+showLogs && console.log("DialogoAgregar -> handleClose()");
     this.setState(initialState);
     this.props.onClose();
   };
 
   handleAdd = () => {
-    console.log("DialogoAgregar -> handleAdd()");
+showLogs && console.log("DialogoAgregar -> handleAdd()");
     const newLogin = Object.assign({}, this.state, { id: +new Date() });
     this.props.onAdd(newLogin);
     this.handleClose();

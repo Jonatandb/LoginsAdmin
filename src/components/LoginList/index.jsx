@@ -29,18 +29,18 @@ const styles = theme => ({
 });
 
 class LoginList extends React.Component {
-  state = {
-    open: true
-  };
+  // state = {
+  //   open: true
+  // };
 
-  handleClick = () => {
-    this.setState(state => ({ open: !state.open }));
-  };
+  // handleClick = () => {
+  //   this.setState(state => ({ open: !state.open }));
+  // };
 
   makeHeader = text => <ListSubheader component="div">{text}</ListSubheader>;
 
   makeRow = (item, includeIcon = true) => (
-    <React.Fragment key={item.id}>
+    <React.Fragment key={item.login_id}>
       <ListItem button>
         {includeIcon && (
           <ListItemIcon>
@@ -49,9 +49,9 @@ class LoginList extends React.Component {
         )}
         <ListItemText
           inset
-          primary={item.serviceName}
+          primary={item.service_name}
           className={this.props.classes.capitalize}
-          onClick={() => this.props.onClick(item.id)}
+          onClick={() => this.props.onClick(item.login_id)}
         />
       </ListItem>
     </React.Fragment>
@@ -59,37 +59,41 @@ class LoginList extends React.Component {
 
   render() {
     const { loginList, searchedText, classes } = this.props;
-    const filterByServiceName = (item, text) => {
-      return item.serviceName
+    const filterByServiceName = item => {
+      return item.service_name
         .trim()
         .toLowerCase()
         .includes(searchedText);
     };
-    const filterByServiceURL = (item, text) => {
-      return item.serviceURL
-        .trim()
-        .toLowerCase()
-        .includes(searchedText);
-    };
-    const filterByUserName = (item, text) => {
-      return item.userName
-        .trim()
-        .toLowerCase()
-        .includes(searchedText);
-    };
-    const filterByNotes = (item, text) => {
-      return item.notes
-        .trim()
-        .toLowerCase()
-        .includes(searchedText);
-    };
+
+    // Ya que no traigo mas todos los datos de los logins, 
+    // no puedo filtrar por todos los campos :O
+    //  Ver como resolver...
+
+    // const filterByServiceURL = item => {
+    //   return item.service_url
+    //     .trim()
+    //     .toLowerCase()
+    //     .includes(searchedText);
+    // };
+    // const filterByUserName = item => {
+    //   return item.username
+    //     .trim()
+    //     .toLowerCase()
+    //     .includes(searchedText);
+    // };
+    // const filterByNotes = item => {
+    //   return item.notes
+    //     .trim()
+    //     .toLowerCase()
+    //     .includes(searchedText);
+    // };
     const filterByAllFields = (item, text) => {
-      return (
-        filterByServiceName(item, text) ||
-        filterByServiceURL(item, text) ||
-        filterByUserName(item, text) ||
-        filterByNotes(item, text)
-      );
+      return (   filterByServiceName(item, text)     );
+        // filterByServiceName(item, text) ||
+        // filterByServiceURL(item, text) ||
+        // filterByUserName(item, text) ||
+        // filterByNotes(item, text)
     };
     const listItems = loginList && loginList.map(i => this.makeRow(i));
     const filteredListItems =
