@@ -3,12 +3,8 @@ Created with CodeSandbox: [https://codesandbox.io/s/github/Jonatan-db/LoginsAdmi
 
 Administrador de credenciales realizado durante mis prácticas con React para aprender a usar Material-UI.
 
-
 ## Preview
 [![Jonatandb](preview.png?raw=true "LoginsAdmin"){:target="_blank"}](https://jonatandb-loginsadmin.netlify.com)
-
-## Test
-<a href="https://jonatandb-loginsadmin.netlify.com" target="_blank" rel="noopener">![Jonatandb](preview.png?raw=true "LoginsAdmin")</a>
 
 # Pasos para que funcione [Netlify](https://www.netlify.com):
 - 1º Agregar una carpeta vacía en el raíz, llamada: build
