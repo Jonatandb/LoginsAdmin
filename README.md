@@ -7,6 +7,9 @@ Administrador de credenciales realizado durante mis prácticas con React para ap
 ## Preview
 [![Jonatandb](preview.png?raw=true "LoginsAdmin"){:target="_blank"}](https://jonatandb-loginsadmin.netlify.com)
 
+## Test
+<a href="https://jonatandb-loginsadmin.netlify.com" target="_blank" rel="noopener">![Jonatandb](preview.png?raw=true "LoginsAdmin")</a>
+
 # Pasos para que funcione [Netlify](https://www.netlify.com):
 - 1º Agregar una carpeta vacía en el raíz, llamada: build
 - 2º En caso de que el archivo "packages.json" tenga una línea para "homepage", eliminarla.
