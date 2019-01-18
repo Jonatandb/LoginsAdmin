@@ -2,7 +2,8 @@ import axios from "axios";
 import loginsServiceNameEndpoint from './config.js';
 
 const showLogs = false;
-
+// https://www.robinwieruch.de/react-fetching-data/
+// TODO: Mejorar esto!
 export default {    
     async getLoginsServiceName() {
         const url = loginsServiceNameEndpoint;
