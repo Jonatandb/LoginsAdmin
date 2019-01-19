@@ -70,6 +70,7 @@ export const PendingTasks = ({ currentUser }) => {
         { /*<TestMysql />*/ }
         <br />A desarrollar:
         <ul>
+          <li>Hacer un componente que me permita saber que versión de la aplicación se está ejecutando</li>
           <li>Hacer que el agregado de un login funcione aunque no se inicie sesión</li>
           <li>Hacer que al clickear un login se muestren todos sus datos</li>
           <li>Hacer que la búsqueda revise todos los campos</li>
