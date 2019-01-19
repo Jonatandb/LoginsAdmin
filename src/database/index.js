@@ -14,9 +14,9 @@ export default {
 
         client.connect();
 
-        client.query('', (err, resp) => {
+        client.query('SELECT table_schema,table_name FROM information_schema.tables;', (err, resp) => {
             if(err) throw err;
-            for(let row of res.rows) {
+            for(let row of resp.rows) {
                 console.log(JSON.stringify(row));
             }
             client.end();
