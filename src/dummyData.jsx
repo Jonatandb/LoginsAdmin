@@ -1,73 +1,9 @@
 import React from "react";
-// import axios from "axios";
-
-// class TestMysql extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       error: "",
-//       data: null,
-//       isLoading: false
-//     };
-//   }
-
-//   componentDidMount() {
-//     this.setState({ isLoading: true });
-//     const url = "https://jonatandb01.000webhostapp.com/loginsservicename";
-//     //const url = "https://jonatandb01.000webhostapp.com/logindata?id=1";
-//     axios
-//       .get(url)
-//       .then(result =>
-//         this.setState({
-//           data: result.data,
-//           isLoading: false
-//         })
-//       )
-//       .catch(error =>
-//         this.setState({
-//           error,
-//           isLoading: false
-//         })
-//       );
-//   }
-
-//   render() {
-//     this.state.error &&
-//       console.log("TestMysql - render(): this.state.error = ", this.state.error);
-//     console.log(this.state.error);
-//     this.state.data &&
-//       console.log("TestMysql - render(): this.state.data = ", this.state.data);
-
-//     if (this.state.isLoading) {
-//       return <h3>TestMysql - Cargando...</h3>;
-//     }
-
-//     if(this.state.error) {
-//       return (
-//         <h2>TestMysql - Error: {JSON.stringify(this.state.error)}</h2>
-//       );
-//     }
-
-//     return (
-//       <React.Fragment>
-//         <h3>TestMysql:</h3>
-//         <ul>
-//           {
-//             this.state.data && this.state.data.map(login => {
-//               return <li key={login.login_id}>{JSON.stringify(login)}</li>
-//             })
-//           }
-//         </ul>
-//       </React.Fragment>
-//     );
-//   }
-// }
 
 export const PendingTasks = ({ currentUser }) => {
   return currentUser !== "" ? (
     <React.Fragment>
       <div style={{ color: "gray" }}>
-        { /*<TestMysql />*/ }
         <br />A desarrollar:
         <ul>
           <li>Hacer un componente que me permita saber que versión de la aplicación se está ejecutando</li>
@@ -78,32 +14,14 @@ export const PendingTasks = ({ currentUser }) => {
           <li>Refactor del diálogo Agregar para que esté todo en una Grid</li>
           <li>Opción para editar credenciales almacenadas</li>
           <li>Opción para eliminar credenciales</li>
-          <li>
-            Hacer que aparezcan agrupadas en una sola las filas las credenciales
-            para un mismo servicio y que se expandan al hacerles click
-          </li>
-          <li>
-            Que se pueda usar como invitado para al menos descargarse el listado
-            en xls
-          </li>
+          <li>Hacer que aparezcan agrupadas en una sola las filas las credenciales para un mismo servicio y que se expandan al hacerles click</li>
+          <li>Que se pueda usar como invitado para al menos descargarse el listado en xls</li>
           <li>Que se pueda exportar a varios formatos</li>
-          <li>
-            Que la exportanción funcione correctamente en todos los navegadores
-          </li>
-          <li>
-            Que se pueda acceder con usuario y clave para ver las credenciales
-            almacenadas previamente
-          </li>
-          <li>
-            Que al hacerse click en Agregar, el primer campo tenga el foco con
-            el cursor
-          </li>
-          <li>
-            Que al hacerse click en Agregar, el botón guardar esté a la derecha
-            y sea el predeterminado
-          </li>
+          <li>Que la exportanción funcione correctamente en todos los navegadores</li>
+          <li>Que se pueda acceder con usuario y clave para ver las credenciales almacenadas previamente</li>
+          <li>Que al hacerse click en Agregar, el primer campo tenga el foco con el cursor</li>
+          <li>Que al hacerse click en Agregar, el botón guardar esté a la derecha y sea el predeterminado</li>
           <li>Corregir alineación y ancho de los campos de los formularios</li>
-          <li>.</li>
         </ul>
         <hr />
         {
