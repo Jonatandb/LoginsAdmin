@@ -1,5 +1,7 @@
 node_modules
 
+yarn.lock
+
 .env
 
 Check_env_DATABASE_URL.js
