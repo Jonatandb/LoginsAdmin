@@ -1,19 +1,20 @@
-//import { Client } from "pg";
-// https://github.com/brianc/node-postgres/wiki/FAQ#14-how-do-i-install-pg-on-windows
-// https://github.com/sequelize/sequelize/issues/9610#issuecomment-401065840
+//require('dotenv').config(); // lee y establece lo que tenga el archivo ".env" (Usado solo en dev)
+const promise = require('bluebird');
+const initOptions = {promiseLib: promise};
+const pgp = require('pg-promise')(initOptions);
+const connectionString = process.env.DATABASE_URL;
+
 export default {
     async getLoginsServiceName() {
-        const client = new Client({
-            connectionString: process.env.DATABASE_URL,
-            ssl: true,
+        const db = pgp(connectionString);
+        db.any('select login_id, service_name from logins;')
+        .then(data => {
+            return data;
         })
-        client.connect();
-        client.query('SELECT table_schema,table_name FROM information_schema.tables;', (err, resp) => {
-            if(err) throw err;
-            for(let row of resp.rows) {
-                console.log(JSON.stringify(row));
-            }
-            client.end();
-        });
+        .catch(error => {
+            console.log('ERROR:', error);
+            return [];
+        })
+        .finally(db.$pool.end);
     }
 }

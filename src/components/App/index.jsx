@@ -8,7 +8,7 @@ import Pie from "../Pie";
 import BotonAgregar from "../Agregar/BotonAgregar";
 import DialogoAgregar from "../Agregar/DialogoAgregar";
 import exportToXLS from "../../exporter";
-// import database from "../../database";
+import database from "../../database";
 import { PendingTasks } from "../../dummyData";
 
 const initalState = {
@@ -32,10 +32,10 @@ class App extends React.Component {
   };
 
   loadData = () => {
-    // this.setState({loadingData: true});
-    // database.getLoginsServiceName().then(data => {
-    //   this.setState({loadingData: false, loginList: data});
-    // });
+    this.setState({loadingData: true});
+    database.getLoginsServiceName().then(data => {
+      this.setState({loadingData: false, loginList: data});
+    });
   }
 
   handleSearch = e => {
