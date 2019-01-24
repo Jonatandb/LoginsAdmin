@@ -13,8 +13,11 @@ export default {
         // })
         // .catch(error => {
         //     console.log('ERROR:', error);
-        console.log('getLoginsServiceName() - connectionString: ' + connectionString);
-            return [];
+        console.log('database - index.js -> getLoginsServiceName() -> connectionString: ' + connectionString);
+        const vars = process.env;
+        console.log(JSON.stringify(vars));
+        debugger;
+        return [];
         // })
         // .finally(db.$pool.end);
     }

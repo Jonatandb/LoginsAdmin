@@ -4,7 +4,6 @@ export const PendingTasks = ({ currentUser }) => {
   return currentUser !== "" ? (
     <React.Fragment>
       <div style={{ color: "gray" }}>
-      {console.log('PendingTasks - process.env.DATABASE_URL: ', process.env.DATABASE_URL)}
         <br />A desarrollar:
         <ul>
           <li>Hacer un componente que me permita saber que versión de la aplicación se está ejecutando</li>
