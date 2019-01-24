@@ -13,7 +13,7 @@ export default {
         // })
         // .catch(error => {
         //     console.log('ERROR:', error);
-        console.log(connectionString);
+        console.log('getLoginsServiceName() - connectionString: ' + connectionString);
             return [];
         // })
         // .finally(db.$pool.end);
