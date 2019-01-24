@@ -8,10 +8,8 @@ import Pie from "../Pie";
 import BotonAgregar from "../Agregar/BotonAgregar";
 import DialogoAgregar from "../Agregar/DialogoAgregar";
 import exportToXLS from "../../exporter";
-import database from "../../database";
+// import database from "../../database";
 import { PendingTasks } from "../../dummyData";
-
-const showLogs = false;
 
 const initalState = {
   searchText: "",
@@ -28,26 +26,19 @@ class App extends React.Component {
     this.state = initalState;
   }
 
-  componentDidMount() {
-showLogs && console.log("App -> componentDidMount()" + this.constructor.name);
-  }
-
   handleLogin = () => {
-showLogs && console.log("App -> handleLogin()");
-    this.setState({currentUser: 'Jonatandb'})
+    this.setState({currentUser: 'demo'})
     this.loadData();
   };
 
   loadData = () => {
-showLogs && console.log("App -> loadData()");
-    this.setState({loadingData: true});
-    database.getLoginsServiceName().then(data => {
-      this.setState({loadingData: false, loginList: data});
-    });
+    // this.setState({loadingData: true});
+    // database.getLoginsServiceName().then(data => {
+    //   this.setState({loadingData: false, loginList: data});
+    // });
   }
 
   handleSearch = e => {
-showLogs && console.log("App -> handleSearch()");
     const searchText = e.currentTarget.value.trim().toLowerCase();
     this.setState({
       searchText
@@ -55,39 +46,32 @@ showLogs && console.log("App -> handleSearch()");
   };
 
   handleShowAddDialog = () => {
-showLogs && console.log("App -> handleShowAddDialog()");
     this.setState({ showAddDialog: true });
   };
 
   handleCloseAddDialog = () => {
-showLogs && console.log("App -> handleCloseAddDialog()");
     this.setState({ showAddDialog: false });
   };
 
   handleShowDetailsDialog = id => {
-showLogs && console.log("App -> handleShowDetailsDialog(" + id + ")");
     this.setState({ showDetails: id });
   };
 
   handleCloseDetailsDialog = () => {
-showLogs && console.log("App -> handleCloseDetailsDialog()");
     this.setState({ showDetails: -1 });
   };
 
   handleOnAdd = newLogin => {
-showLogs && console.log("App -> handleOnAdd()");
     this.setState({ loginList: [...this.state.loginList, newLogin] });
   };
 
   handleExport = () => {
-showLogs && console.log("App -> handleExport()");
     this.state.loginList &&
       this.state.loginList.length > 0 &&
       exportToXLS(this.state.loginList);
   };
 
   handleLogout = () => {
-showLogs && console.log("App -> handleLogout()");
     this.setState(initalState);
   };
 
@@ -105,11 +89,11 @@ showLogs && console.log("App -> handleLogout()");
         />
         <Busqueda onChange={this.handleSearch} value={this.state.searchText} />
         {
-          this.state.loadingData ? 
-          <Typography variant="h7" color="primary" gutterBottom>
+          this.state.loadingData ?
+          <Typography variant="h6" color="primary" gutterBottom>
             Cargando datos...
           </Typography>
-          : 
+          :
           <LoginList
             loginList={this.state.loginList}
             searchedText={this.state.searchText}
@@ -124,12 +108,12 @@ showLogs && console.log("App -> handleLogout()");
             item={itemToShow}
           />
         }
+        <BotonAgregar onClick={this.handleShowAddDialog} />
         <DialogoAgregar
           open={this.state.showAddDialog}
           onClose={this.handleCloseAddDialog}
           onAdd={this.handleOnAdd}
         />
-        <BotonAgregar onClick={this.handleShowAddDialog} />
         <Pie />
         <PendingTasks currentUser={this.state.currentUser} />
       </div>

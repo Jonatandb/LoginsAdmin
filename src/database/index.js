@@ -1,5 +1,6 @@
-import { Client } from "pg";
-
+//import { Client } from "pg";
+// https://github.com/brianc/node-postgres/wiki/FAQ#14-how-do-i-install-pg-on-windows
+// https://github.com/sequelize/sequelize/issues/9610#issuecomment-401065840
 export default {
     async getLoginsServiceName() {
         const client = new Client({
