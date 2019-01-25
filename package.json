@@ -32,16 +32,14 @@
   "dependencies": {
     "@material-ui/core": "3.7.1",
     "@material-ui/icons": "3.0.1",
-    "bluebird": "^3.5.3",
     "export-from-json": "1.1.1",
+    "bluebird": "^3.5.3",
     "pg-promise": "^8.5.5",
     "react": "16.5.2",
     "react-dom": "16.5.2",
     "react-scripts": "2.0.3"
   },
-  "devDependencies": {
-    "dotenv": "^6.2.0"
-  },
+  "devDependencies": {},
   "browserslist": [
     ">0.2%",
     "not dead",

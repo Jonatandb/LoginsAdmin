@@ -24,7 +24,7 @@ class App extends React.Component {
   constructor(props){
     super(props);
     this.state = initalState;
-  }
+  };
 
   handleLogin = () => {
     this.setState({currentUser: 'demo'})
@@ -36,7 +36,7 @@ class App extends React.Component {
     database.getLoginsServiceName().then(data => {
       this.setState({loadingData: false, loginList: data});
     });
-  }
+  };
 
   handleSearch = e => {
     const searchText = e.currentTarget.value.trim().toLowerCase();
@@ -118,7 +118,7 @@ class App extends React.Component {
         <PendingTasks currentUser={this.state.currentUser} />
       </div>
     );
-  }
-}
+  };
+};
 
 export default App;
