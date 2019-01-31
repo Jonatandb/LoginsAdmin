@@ -4,4 +4,6 @@ yarn.lock
 
 .env
 
+build
+
 Check_env_DATABASE_URL.js
