@@ -1,11 +1,13 @@
+/* eslint-disable no-console */
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import App from './components/App';
+import App from 'components/App';
 
 if ((process.env.NODE_ENV === 'production')) {
     console.log('__PROD__');
-} else { 
+} else {
     console.log('__DEV__');
 }
 
