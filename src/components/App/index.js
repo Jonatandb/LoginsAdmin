@@ -18,7 +18,7 @@ const initalState = {
     showAddDialog: false,
     loginList: [],
     loadingData: false,
-}
+};
 
 class App extends React.Component {
     constructor(props) {
@@ -27,52 +27,52 @@ class App extends React.Component {
     }
 
     handleLogin = () => {
-      this.setState({currentUser: 'demo'});
-      this.loadData();
+        this.setState({currentUser: 'demo'});
+        this.loadData();
     }
 
     loadData = () => {
-      this.setState({loadingData: true});
-      database.getLoginsServiceName().then(data => {
-        this.setState({loadingData: false, loginList: data});
-      });
+        this.setState({loadingData: true});
+        database.getLoginsServiceName().then(data => {
+            this.setState({loadingData: false, loginList: data});
+        });
     }
 
     handleSearch = e => {
-      const searchText = e.currentTarget.value.trim().toLowerCase();
-      this.setState({
-        searchText
-      });
+        const searchText = e.currentTarget.value.trim().toLowerCase();
+        this.setState({
+            searchText
+        });
     }
 
     handleShowAddDialog = () => {
-      this.setState({ showAddDialog: true });
+        this.setState({ showAddDialog: true });
     }
 
     handleCloseAddDialog = () => {
-      this.setState({ showAddDialog: false });
+        this.setState({ showAddDialog: false });
     }
 
     handleShowDetailsDialog = id => {
-      this.setState({ showDetails: id });
+        this.setState({ showDetails: id });
     }
 
     handleCloseDetailsDialog = () => {
-      this.setState({ showDetails: -1 });
+        this.setState({ showDetails: -1 });
     }
 
     handleOnAdd = newLogin => {
-      this.setState({ loginList: [...this.state.loginList, newLogin] });
+        this.setState({ loginList: [...this.state.loginList, newLogin] });
     }
 
     handleExport = () => {
-      this.state.loginList &&
+        this.state.loginList &&
         this.state.loginList.length > 0 &&
         exportToXLS(this.state.loginList);
     }
 
     handleLogout = () => {
-      this.setState(initalState);
+        this.setState(initalState);
     }
 
     render() {
