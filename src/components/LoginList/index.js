@@ -38,83 +38,83 @@ class LoginList extends React.Component {
     //   this.setState(state => ({ open: !state.open }));
     // };
 
-  makeHeader = text => <ListSubheader component="div">{text}</ListSubheader>;
+    makeHeader = text => <ListSubheader component="div">{text}</ListSubheader>;
 
-  makeRow = (item, includeIcon = true) => (
-      <React.Fragment key={item.login_id}>
-          <ListItem button>
-              {includeIcon && (
-                  <ListItemIcon>
-                      <OpenInNewIcon />
-                  </ListItemIcon>
-              )}
-              <ListItemText
-                  inset
-                  primary={item.service_name}
-                  className={this.props.classes.capitalize}
-                  onClick={() => this.props.onClick(item.login_id)}
-              />
-          </ListItem>
-      </React.Fragment>
-  );
+    makeRow = (item, includeIcon = true) => (
+        <React.Fragment key={item.login_id}>
+            <ListItem button>
+                {includeIcon && (
+                    <ListItemIcon>
+                        <OpenInNewIcon />
+                    </ListItemIcon>
+                )}
+                <ListItemText
+                    inset
+                    primary={item.service_name}
+                    className={this.props.classes.capitalize}
+                    onClick={() => this.props.onClick(item.login_id)}
+                />
+            </ListItem>
+        </React.Fragment>
+    );
 
-  render() {
-      const { loginList, searchedText, classes } = this.props;
-      const filterByServiceName = item => {
-          return item.service_name
-              .trim()
-              .toLowerCase()
-              .includes(searchedText);
-      };
+    render() {
+        const { loginList, searchedText, classes } = this.props;
+        const filterByServiceName = item => {
+            return item.service_name
+                .trim()
+                .toLowerCase()
+                .includes(searchedText);
+        };
 
-      // Ya que no traigo mas todos los datos de los logins,
-      // no puedo filtrar por todos los campos :O
-      //  Ver como resolver...
+        // Ya que no traigo mas todos los datos de los logins,
+        // no puedo filtrar por todos los campos :O
+        //  Ver como resolver...
 
-      // const filterByServiceURL = item => {
-      //   return item.service_url
-      //     .trim()
-      //     .toLowerCase()
-      //     .includes(searchedText);
-      // };
-      // const filterByUserName = item => {
-      //   return item.username
-      //     .trim()
-      //     .toLowerCase()
-      //     .includes(searchedText);
-      // };
-      // const filterByNotes = item => {
-      //   return item.notes
-      //     .trim()
-      //     .toLowerCase()
-      //     .includes(searchedText);
-      // };
-      const filterByAllFields = (item, text) => {
-          return (   filterByServiceName(item, text)     );
-          // filterByServiceName(item, text) ||
-          // filterByServiceURL(item, text) ||
-          // filterByUserName(item, text) ||
-          // filterByNotes(item, text)
-      };
-      const listItems = loginList && loginList.map(i => this.makeRow(i));
-      const filteredListItems =
-      loginList && searchedText && searchedText !== ''
-          ? loginList.filter(filterByAllFields).map(i => this.makeRow(i))
-          : listItems;
+        // const filterByServiceURL = item => {
+        //   return item.service_url
+        //     .trim()
+        //     .toLowerCase()
+        //     .includes(searchedText);
+        // };
+        // const filterByUserName = item => {
+        //   return item.username
+        //     .trim()
+        //     .toLowerCase()
+        //     .includes(searchedText);
+        // };
+        // const filterByNotes = item => {
+        //   return item.notes
+        //     .trim()
+        //     .toLowerCase()
+        //     .includes(searchedText);
+        // };
+        const filterByAllFields = (item, text) => {
+            return (   filterByServiceName(item, text)     );
+            // filterByServiceName(item, text) ||
+            // filterByServiceURL(item, text) ||
+            // filterByUserName(item, text) ||
+            // filterByNotes(item, text)
+        };
+        const listItems = loginList && loginList.map(i => this.makeRow(i));
+        const filteredListItems =
+        loginList && searchedText && searchedText !== ''
+            ? loginList.filter(filterByAllFields).map(i => this.makeRow(i))
+            : listItems;
 
-      const header =
-      !loginList || loginList.length === 0
-          ? this.makeHeader('Aún no se agregaron credenciales...')
-          : !filteredListItems || filteredListItems.length === 0
-              ? this.makeHeader('No hay coindencias.')
-              : this.makeHeader('Listado de credenciales:');
+        const header =
+        !loginList || loginList.length === 0
+            ? this.makeHeader('Aún no se agregaron credenciales...')
+            : !filteredListItems || filteredListItems.length === 0
+                ? this.makeHeader('No hay coindencias.')
+                : this.makeHeader('Listado de credenciales:');
 
-      return (
-          <List component="nav" subheader={header} className={classes.root}>
-              {filteredListItems}
-          </List>
-      );
-  }
+        return (
+            <List component="nav" subheader={header} className={classes.root}>
+                {filteredListItems}
+            </List>
+        );
+    }
 }
 
 export default withStyles(styles)(LoginList);

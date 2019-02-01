@@ -28,77 +28,77 @@ const styles = {
 };
 
 class Cabecera extends React.Component {
-  state = {
-      anchorEl: null,
-      currentUser: ''
-  };
+    state = {
+        anchorEl: null,
+        currentUser: ''
+    };
 
-  handleClick = event => {
-      this.setState({ anchorEl: event.currentTarget });
-  };
+    handleClick = event => {
+        this.setState({ anchorEl: event.currentTarget });
+    };
 
-  handleClose = () => {
-      this.setState({ anchorEl: null });
-  };
+    handleClose = () => {
+        this.setState({ anchorEl: null });
+    };
 
-  handleOnExportClick = () => {
-      this.props.onExportClick();
-      this.handleClose();
-  };
-  handleOnLogoutClick = () => {
-      this.props.onLogoutClick();
-      this.handleClose();
-  };
-  handleOnLoginClick = () => {
-      this.props.currentUser !== ''
-          ? this.props.onLogoutClick()
-          : this.props.onLoginClick();
-      this.handleClose();
-  };
+    handleOnExportClick = () => {
+        this.props.onExportClick();
+        this.handleClose();
+    };
+    handleOnLogoutClick = () => {
+        this.props.onLogoutClick();
+        this.handleClose();
+    };
+    handleOnLoginClick = () => {
+        this.props.currentUser !== ''
+            ? this.props.onLogoutClick()
+            : this.props.onLoginClick();
+        this.handleClose();
+    };
 
-  render() {
-      const { classes } = this.props;
-      return (
-          <div className={classes.root}>
-              <AppBar position="fixed">
-                  <Toolbar>
-                      <IconButton
-                          className={classes.menuButton}
-                          color="inherit"
-                          aria-label="Menu"
-                          aria-owns={this.state.anchorEl ? 'simple-menu' : undefined}
-                          aria-haspopup="true"
-                          onClick={this.handleClick}
-                      >
-                          <MenuIcon />
-                      </IconButton>
-                      <Menu
-                          id="simple-menu"
-                          anchorEl={this.state.anchorEl}
-                          open={Boolean(this.state.anchorEl)}
-                          onClose={this.handleClose}
-                      >
-                          <MenuItem onClick={this.handleOnExportClick}>Exportar</MenuItem>
-                          <MenuItem onClick={this.handleOnLogoutClick}>
+    render() {
+        const { classes } = this.props;
+        return (
+            <div className={classes.root}>
+                <AppBar position="fixed">
+                    <Toolbar>
+                        <IconButton
+                            className={classes.menuButton}
+                            color="inherit"
+                            aria-label="Menu"
+                            aria-owns={this.state.anchorEl ? 'simple-menu' : undefined}
+                            aria-haspopup="true"
+                            onClick={this.handleClick}
+                        >
+                            <MenuIcon />
+                        </IconButton>
+                        <Menu
+                            id="simple-menu"
+                            anchorEl={this.state.anchorEl}
+                            open={Boolean(this.state.anchorEl)}
+                            onClose={this.handleClose}
+                        >
+                            <MenuItem onClick={this.handleOnExportClick}>Exportar</MenuItem>
+                            <MenuItem onClick={this.handleOnLogoutClick}>
                 Cerrar sesión
-                          </MenuItem>
-                      </Menu>
-                      <Typography variant="h6" color="inherit" className={classes.grow}>
-              LoginsAdmin
-                      </Typography>
-                      <Button color="inherit" onClick={this.handleOnLoginClick}>
-                          {this.props.currentUser !== ''
-                              ? this.props.currentUser
-                              : 'Acceder'}
-                      </Button>
-                  </Toolbar>
-                  <Typography gutterBottom align="center" className={classes.subtitle}>
+                            </MenuItem>
+                        </Menu>
+                        <Typography variant="h6" color="inherit" className={classes.grow}>
+                LoginsAdmin
+                        </Typography>
+                        <Button color="inherit" onClick={this.handleOnLoginClick}>
+                            {this.props.currentUser !== ''
+                                ? this.props.currentUser
+                                : 'Acceder'}
+                        </Button>
+                    </Toolbar>
+                    <Typography gutterBottom align="center" className={classes.subtitle}>
             Administrador de credenciales simple y dinámico
-                  </Typography>
-              </AppBar>
-          </div>
-      );
-  }
+                    </Typography>
+                </AppBar>
+            </div>
+        );
+    }
 }
 
 export default withStyles(styles)(Cabecera);

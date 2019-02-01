@@ -17,78 +17,78 @@ import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 
 class DialogDetalles extends React.Component {
-  handleClose = () => {
-      this.props.onClose(-1);
-  };
+    handleClose = () => {
+        this.props.onClose(-1);
+    };
 
-  // createRow = (item, prop) => {
-  //   return (
-  //     <TableRow>
-  //       <TableCell>{prop}:</TableCell>
-  //       <TableCell style={{ textTransform: "capitalize" }}>
-  //         {item[prop]}
-  //       </TableCell>
-  //     </TableRow>
-  //   );
-  // };
+    // createRow = (item, prop) => {
+    //   return (
+    //     <TableRow>
+    //       <TableCell>{prop}:</TableCell>
+    //       <TableCell style={{ textTransform: "capitalize" }}>
+    //         {item[prop]}
+    //       </TableCell>
+    //     </TableRow>
+    //   );
+    // };
 
-  createListItem = item => (
-      <React.Fragment>
-          <Table>
-              <TableBody>
-                  {/* <div>{Object.keys(item).map(prop => ( prop !== 'id' && prop + ': ' + item[prop]))}</div>*/}
-                  {/*Object.keys(item).map(prop => this.createRow(item, prop))*/}
-                  <TableRow>
-                      <TableCell>Servicio:</TableCell>
-                      <TableCell style={{ textTransform: 'capitalize' }}>
-                          {item.service_name}
-                      </TableCell>
-                  </TableRow>
-                  <TableRow>
-                      <TableCell>URL:</TableCell>
-                      <TableCell>
-                          <a href={item.service_url} target={'_blank'}>
-                              {item.service_url}
-                          </a>
-                      </TableCell>
-                  </TableRow>
-                  <TableRow>
-                      <TableCell>Usuario:</TableCell>
-                      <TableCell>{item.username}</TableCell>
-                  </TableRow>
-                  <TableRow>
-                      <TableCell>Clave:</TableCell>
-                      <TableCell>{item.password}</TableCell>
-                  </TableRow>
-                  <TableRow>
-                      <TableCell>Notas:</TableCell>
-                      <TableCell>{item.notes}</TableCell>
-                  </TableRow>
-              </TableBody>
-          </Table>
-      </React.Fragment>
-  );
-  render() {
-      const { open, item } = this.props;
-      return (
-          <Dialog
-              aria-labelledby="simple-dialog-title"
-              onClose={this.handleClose}
-              open={item && open}
-          >
-              <DialogTitle id="simple-dialog-title">
-          Detalles de la cuenta:
-              </DialogTitle>
-              <List>
-                  {this.createListItem(item)}
-                  <Button onClick={this.handleClose} color="primary" autoFocus>
-                      <ArrowBackIcon />
+    createListItem = item => (
+        <React.Fragment>
+            <Table>
+                <TableBody>
+                    {/* <div>{Object.keys(item).map(prop => ( prop !== 'id' && prop + ': ' + item[prop]))}</div>*/}
+                    {/*Object.keys(item).map(prop => this.createRow(item, prop))*/}
+                    <TableRow>
+                        <TableCell>Servicio:</TableCell>
+                        <TableCell style={{ textTransform: 'capitalize' }}>
+                            {item.service_name}
+                        </TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell>URL:</TableCell>
+                        <TableCell>
+                            <a href={item.service_url} target={'_blank'}>
+                                {item.service_url}
+                            </a>
+                        </TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell>Usuario:</TableCell>
+                        <TableCell>{item.username}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell>Clave:</TableCell>
+                        <TableCell>{item.password}</TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell>Notas:</TableCell>
+                        <TableCell>{item.notes}</TableCell>
+                    </TableRow>
+                </TableBody>
+            </Table>
+        </React.Fragment>
+    );
+    render() {
+        const { open, item } = this.props;
+        return (
+            <Dialog
+                aria-labelledby="simple-dialog-title"
+                onClose={this.handleClose}
+                open={item && open}
+            >
+                <DialogTitle id="simple-dialog-title">
+            Detalles de la cuenta:
+                </DialogTitle>
+                <List>
+                    {this.createListItem(item)}
+                    <Button onClick={this.handleClose} color="primary" autoFocus>
+                        <ArrowBackIcon />
             Volver
-                  </Button>
-              </List>
-          </Dialog>
-      );
-  }
+                    </Button>
+                </List>
+            </Dialog>
+        );
+    }
 }
 
 export default DialogDetalles;
