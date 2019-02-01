@@ -7,8 +7,8 @@ import DialogoDetalles from 'components/DialogoDetalles';
 import Pie from 'components/Pie';
 import BotonAgregar from 'components/Agregar/BotonAgregar';
 import DialogoAgregar from 'components/Agregar/DialogoAgregar';
-// import exportToXLS from '_base/_utils/exporter';
-// import database from '_base/database';
+import exportToXLS from '_base/_utils/exporter';
+import database from '_base/database';
 import { PendingTasks } from '_base/_utils/dummyData';
 
 const initalState = {
