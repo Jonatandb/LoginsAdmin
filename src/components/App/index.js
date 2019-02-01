@@ -54,7 +54,8 @@ class App extends React.Component {
     }
 
     handleShowDetailsDialog = id => {
-        this.setState({ showDetails: id });
+        let itemToShow = id && id >= 0 ? id : -1;
+        this.setState({ showDetails: itemToShow });
     }
 
     handleCloseDetailsDialog = () => {
@@ -77,8 +78,8 @@ class App extends React.Component {
 
     render() {
         const itemToShow =
-      this.state.showDetails !== -1 &&
-      this.state.loginList.filter(i => i.login_id === this.state.showDetails)[0];
+        this.state.showDetails !== -1 &&
+        this.state.loginList.filter(i => i.login_id === this.state.showDetails)[0];
         return (
             <div className="App">
                 <Cabecera
@@ -102,11 +103,11 @@ class App extends React.Component {
                 }
                 {
                     itemToShow !== 'undefined' &&
-          <DialogoDetalles
-              open={this.state.showDetails !== -1}
-              onClose={this.handleCloseDetailsDialog}
-              item={itemToShow}
-          />
+            <DialogoDetalles
+                open={this.state.showDetails !== -1}
+                onClose={this.handleCloseDetailsDialog}
+                item={itemToShow}
+            />
                 }
                 <BotonAgregar onClick={this.handleShowAddDialog} />
                 <DialogoAgregar
