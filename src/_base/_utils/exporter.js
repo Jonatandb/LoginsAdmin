@@ -1,12 +1,12 @@
-import exportFromJSON from "export-from-json";
+import exportFromJSON from 'export-from-json';
 // import XLSX from 'xlsx';
 
 export default function exportToXLS(dataToExport) {
-  //https://www.npmjs.com/package/export-from-json
-  const fileName = "LoginsAdmin_Backup_" + new Date().toLocaleDateString('es-AR');
-  const exportType = "txt";
-  const data = JSON.stringify(dataToExport);
-  exportFromJSON({ data, fileName, exportType });
+    //https://www.npmjs.com/package/export-from-json
+    const fileName = 'LoginsAdmin_Backup_' + new Date().toLocaleDateString('es-AR');
+    const exportType = 'txt';
+    const data = JSON.stringify(dataToExport);
+    exportFromJSON({ data, fileName, exportType });
 }
 
 // export function exportToXLSX(){

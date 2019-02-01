@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+
 const promise = require('bluebird');
 const initOptions = { promiseLib: promise };
 const pgp = require('pg-promise')(initOptions);
