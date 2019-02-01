@@ -90,7 +90,7 @@ class LoginList extends React.Component {
         //     .includes(searchedText);
         // };
         const filterByAllFields = (item, text) => {
-            return (   filterByServiceName(item, text)     );
+            return filterByServiceName(item, text);
             // filterByServiceName(item, text) ||
             // filterByServiceURL(item, text) ||
             // filterByUserName(item, text) ||
@@ -98,16 +98,16 @@ class LoginList extends React.Component {
         };
         const listItems = loginList && loginList.map(i => this.makeRow(i));
         const filteredListItems =
-        loginList && searchedText && searchedText !== ''
-            ? loginList.filter(filterByAllFields).map(i => this.makeRow(i))
-            : listItems;
+            loginList && searchedText && searchedText !== ''
+                ? loginList.filter(filterByAllFields).map(i => this.makeRow(i))
+                : listItems;
 
         const header =
-        !loginList || loginList.length === 0
-            ? this.makeHeader('Aún no se agregaron credenciales...')
-            : !filteredListItems || filteredListItems.length === 0
-                ? this.makeHeader('No hay coindencias.')
-                : this.makeHeader('Listado de credenciales:');
+            !loginList || loginList.length === 0
+                ? this.makeHeader('Aún no se agregaron credenciales...')
+                : !filteredListItems || filteredListItems.length === 0
+                    ? this.makeHeader('No hay coindencias.')
+                    : this.makeHeader('Listado de credenciales:');
 
         return (
             <List component="nav" subheader={header} className={classes.root}>

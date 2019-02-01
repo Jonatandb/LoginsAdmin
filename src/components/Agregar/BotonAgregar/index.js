@@ -26,7 +26,7 @@ function BotonAgregar(props) {
                 onClick={onClick}
             >
                 <AddIcon className={classes.extendedIcon} />
-        Agregar
+                Agregar
             </Fab>
         </React.Fragment>
     );

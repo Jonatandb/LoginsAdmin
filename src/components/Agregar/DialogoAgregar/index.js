@@ -115,22 +115,24 @@ class DialogoAgregar extends React.Component {
                 open={open}
             >
                 <DialogTitle id="simple-dialog-title">
-            Agregar detalles de la cuenta:
+                    Agregar detalles de la cuenta:
                 </DialogTitle>
                 <List>
                     {this.createListItem()}
                     <Button onClick={this.handleClose} color="primary">
                         <ArrowBackIcon />
-            Volver
+                        Volver
                     </Button>
                     <Button
                         onClick={this.handleAdd}
                         color="primary"
                         autoFocus
-                        {...(this.state.serviceName === '' ? { disabled: true } : null)}
+                        {...(this.state.serviceName === ''
+                            ? { disabled: true }
+                            : null)}
                     >
                         <SaveIcon />
-            Guardar
+                        Guardar
                     </Button>
                 </List>
             </Dialog>

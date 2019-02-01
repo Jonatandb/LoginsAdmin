@@ -6,7 +6,10 @@ export default function Pie() {
         <React.Fragment>
             <hr />
             <Typography variant="caption" gutterBottom align="center">
-Hecho con ❤ por <a href="mailto:jonatandb@gmail.com" alt='Jonatandb'>Jonatandb!</a>
+                Hecho con ❤ por{' '}
+                <a href="mailto:jonatandb@gmail.com" alt="Jonatandb">
+                    Jonatandb!
+                </a>
             </Typography>
             <hr />
         </React.Fragment>

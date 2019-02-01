@@ -77,13 +77,17 @@ class DialogDetalles extends React.Component {
                 open={item && open}
             >
                 <DialogTitle id="simple-dialog-title">
-            Detalles de la cuenta:
+                    Detalles de la cuenta:
                 </DialogTitle>
                 <List>
                     {this.createListItem(item)}
-                    <Button onClick={this.handleClose} color="primary" autoFocus>
+                    <Button
+                        onClick={this.handleClose}
+                        color="primary"
+                        autoFocus
+                    >
                         <ArrowBackIcon />
-            Volver
+                        Volver
                     </Button>
                 </List>
             </Dialog>

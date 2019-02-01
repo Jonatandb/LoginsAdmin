@@ -7,22 +7,56 @@ export const PendingTasks = ({ currentUser }) => {
             <div style={{ color: 'gray' }}>
                 <br />A desarrollar:
                 <ul>
-                    <li>Hacer un componente que me permita saber que versión de la aplicación se está ejecutando</li>
-                    <li>Hacer que el agregado de un login funcione aunque no se inicie sesión</li>
-                    <li>Hacer que al clickear un login se muestren todos sus datos</li>
+                    <li>
+                        Hacer un componente que me permita saber que versión de
+                        la aplicación se está ejecutando
+                    </li>
+                    <li>
+                        Hacer que el agregado de un login funcione aunque no se
+                        inicie sesión
+                    </li>
+                    <li>
+                        Hacer que al clickear un login se muestren todos sus
+                        datos
+                    </li>
                     <li>Hacer que la búsqueda revise todos los campos</li>
                     <li>Hacer funcional el login</li>
-                    <li>Refactor del diálogo Agregar para que esté todo en una Grid</li>
+                    <li>
+                        Refactor del diálogo Agregar para que esté todo en una
+                        Grid
+                    </li>
                     <li>Opción para editar credenciales almacenadas</li>
                     <li>Opción para eliminar credenciales</li>
-                    <li>Hacer que aparezcan agrupadas en una sola las filas las credenciales para un mismo servicio y que se expandan al hacerles click</li>
-                    <li>Que se pueda usar como invitado para al menos descargarse el listado en xls</li>
+                    <li>
+                        Hacer que aparezcan agrupadas en una sola las filas las
+                        credenciales para un mismo servicio y que se expandan al
+                        hacerles click
+                    </li>
+                    <li>
+                        Que se pueda usar como invitado para al menos
+                        descargarse el listado en xls
+                    </li>
                     <li>Que se pueda exportar a varios formatos</li>
-                    <li>Que la exportanción funcione correctamente en todos los navegadores</li>
-                    <li>Que se pueda acceder con usuario y clave para ver las credenciales almacenadas previamente</li>
-                    <li>Que al hacerse click en Agregar, el primer campo tenga el foco con el cursor</li>
-                    <li>Que al hacerse click en Agregar, el botón guardar esté a la derecha y sea el predeterminado</li>
-                    <li>Corregir alineación y ancho de los campos de los formularios</li>
+                    <li>
+                        Que la exportanción funcione correctamente en todos los
+                        navegadores
+                    </li>
+                    <li>
+                        Que se pueda acceder con usuario y clave para ver las
+                        credenciales almacenadas previamente
+                    </li>
+                    <li>
+                        Que al hacerse click en Agregar, el primer campo tenga
+                        el foco con el cursor
+                    </li>
+                    <li>
+                        Que al hacerse click en Agregar, el botón guardar esté a
+                        la derecha y sea el predeterminado
+                    </li>
+                    <li>
+                        Corregir alineación y ancho de los campos de los
+                        formularios
+                    </li>
                 </ul>
                 <hr />
                 {

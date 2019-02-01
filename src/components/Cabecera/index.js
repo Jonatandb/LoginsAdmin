@@ -66,7 +66,9 @@ class Cabecera extends React.Component {
                             className={classes.menuButton}
                             color="inherit"
                             aria-label="Menu"
-                            aria-owns={this.state.anchorEl ? 'simple-menu' : undefined}
+                            aria-owns={
+                                this.state.anchorEl ? 'simple-menu' : undefined
+                            }
                             aria-haspopup="true"
                             onClick={this.handleClick}
                         >
@@ -78,22 +80,35 @@ class Cabecera extends React.Component {
                             open={Boolean(this.state.anchorEl)}
                             onClose={this.handleClose}
                         >
-                            <MenuItem onClick={this.handleOnExportClick}>Exportar</MenuItem>
+                            <MenuItem onClick={this.handleOnExportClick}>
+                                Exportar
+                            </MenuItem>
                             <MenuItem onClick={this.handleOnLogoutClick}>
-                Cerrar sesión
+                                Cerrar sesión
                             </MenuItem>
                         </Menu>
-                        <Typography variant="h6" color="inherit" className={classes.grow}>
-                LoginsAdmin
+                        <Typography
+                            variant="h6"
+                            color="inherit"
+                            className={classes.grow}
+                        >
+                            LoginsAdmin
                         </Typography>
-                        <Button color="inherit" onClick={this.handleOnLoginClick}>
+                        <Button
+                            color="inherit"
+                            onClick={this.handleOnLoginClick}
+                        >
                             {this.props.currentUser !== ''
                                 ? this.props.currentUser
                                 : 'Acceder'}
                         </Button>
                     </Toolbar>
-                    <Typography gutterBottom align="center" className={classes.subtitle}>
-            Administrador de credenciales simple y dinámico
+                    <Typography
+                        gutterBottom
+                        align="center"
+                        className={classes.subtitle}
+                    >
+                        Administrador de credenciales simple y dinámico
                     </Typography>
                 </AppBar>
             </div>
