@@ -1,10 +1,21 @@
 {
     "compilerOptions": {
-        "module": "commonjs",
         "target": "es2016",
-        "jsx": "preserve",
         "checkJs": true,
-        "baseUrl": "./src"
+        "baseUrl": "./src",
+        "paths": {
+          "_base/*": ["./src/_base/*"],
+          "components/*": ["./src/components/*"],
+        }
     },
-    "exclude": ["node_modules", "**/node_modules/*"]
+    "exclude": [
+        "node_modules",
+        "**/node_modules/*",
+        "build",
+        "dist",
+    ],
+    "include": [
+        "src/**/*",
+    ]
 }
+
