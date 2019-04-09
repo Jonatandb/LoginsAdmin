@@ -54,7 +54,7 @@ class App extends React.Component {
     };
 
     handleShowDetailsDialog = id => {
-        let itemToShow = id && id >= 0 ? id : -1;
+        let itemToShow = id !== 'undefined' && id >= '0' ? id : -1;
         this.setState({ showDetails: itemToShow });
     };
 
@@ -105,7 +105,7 @@ class App extends React.Component {
                         onClick={this.handleShowDetailsDialog}
                     />
                 )}
-                {itemToShow !== 'undefined' && (
+                {itemToShow !== 'undefined' && itemToShow !== 'false' && (
                     <DialogoDetalles
                         open={this.state.showDetails !== -1}
                         onClose={this.handleCloseDetailsDialog}

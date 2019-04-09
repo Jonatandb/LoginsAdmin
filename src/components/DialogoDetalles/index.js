@@ -16,7 +16,7 @@ import TableCell from '@material-ui/core/TableCell';
 // import TableHead from "@material-ui/core/TableHead";
 import TableRow from '@material-ui/core/TableRow';
 
-class DialogDetalles extends React.Component {
+class DialogoDetalles extends React.Component {
     handleClose = () => {
         this.props.onClose(-1);
     };
@@ -95,4 +95,4 @@ class DialogDetalles extends React.Component {
     }
 }
 
-export default DialogDetalles;
+export default DialogoDetalles;

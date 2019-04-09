@@ -20,10 +20,10 @@ import TableRow from '@material-ui/core/TableRow';
 const showLogs = false;
 
 const initialState = {
-    id: -1,
-    serviceName: '',
-    serviceURL: '',
-    userName: '',
+    login_id: -1,
+    service_name: '',
+    service_url: '',
+    username: '',
     password: '',
     notes: ''
 };
@@ -39,7 +39,7 @@ class DialogoAgregar extends React.Component {
 
     handleAdd = () => {
         showLogs && console.log('DialogoAgregar -> handleAdd()');
-        const newLogin = Object.assign({}, this.state, { id: +new Date() });
+        const newLogin = Object.assign({}, this.state, { login_id: +new Date() });
         this.props.onAdd(newLogin);
         this.handleClose();
     };
@@ -56,9 +56,9 @@ class DialogoAgregar extends React.Component {
                         <TableCell>Servicio:</TableCell>
                         <TableCell>
                             <input
-                                name="serviceName"
+                                name="service_name"
                                 onChange={this.handleChange}
-                                value={this.state.serviceName}
+                                value={this.state.service_name}
                             />
                         </TableCell>
                     </TableRow>
@@ -66,9 +66,9 @@ class DialogoAgregar extends React.Component {
                         <TableCell>URL:</TableCell>
                         <TableCell>
                             <input
-                                name="serviceURL"
+                                name="service_url"
                                 onChange={this.handleChange}
-                                value={this.state.serviceURL}
+                                value={this.state.service_url}
                             />
                         </TableCell>
                     </TableRow>
@@ -76,9 +76,9 @@ class DialogoAgregar extends React.Component {
                         <TableCell>Usuario:</TableCell>
                         <TableCell>
                             <input
-                                name="userName"
+                                name="username"
                                 onChange={this.handleChange}
-                                value={this.state.userName}
+                                value={this.state.username}
                             />
                         </TableCell>
                     </TableRow>
@@ -127,7 +127,7 @@ class DialogoAgregar extends React.Component {
                         onClick={this.handleAdd}
                         color="primary"
                         autoFocus
-                        {...(this.state.serviceName === ''
+                        {...(this.state.service_name === ''
                             ? { disabled: true }
                             : null)}
                     >
