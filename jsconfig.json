@@ -2,10 +2,10 @@
     "compilerOptions": {
         "target": "es2016",
         "checkJs": true,
-        "baseUrl": "./src",
+        "baseUrl": "./src",     //https://medium.com/@fpastorelima/using-absolute-imports-with-vscode-and-create-react-app-dec6ba0da7ed
         "paths": {
-          "_base/*": ["./src/_base/*"],
-          "components/*": ["./src/components/*"],
+            "_base/*": ["./src/_base/*"],
+            "components/*": ["./src/components/*"],
         }
     },
     "exclude": [

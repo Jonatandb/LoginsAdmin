@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import App from 'components/App';
 
+// Logueo en la consola del navegador el entorno activo:
 if (process.env.NODE_ENV === 'production') {
     console.log('__PROD__');
 } else {

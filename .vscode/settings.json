@@ -1,4 +1,5 @@
 {
+    //https://medium.com/@fpastorelima/using-absolute-imports-with-vscode-and-create-react-app-dec6ba0da7ed
     "javascript.updateImportsOnFileMove.enabled": "always",
     "javascript.preferences.importModuleSpecifier": "non-relative"
 }
