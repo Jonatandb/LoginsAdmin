@@ -91,7 +91,7 @@ class Cabecera extends React.Component {
             </Button>
           </Toolbar>
           <Typography gutterBottom align="center" className={classes.subtitle}>
-            Administrador de credenciales simple y dinámico
+            Administrador de credenciales simple y dinámico (Versión de branch csb-1546918678408)
           </Typography>
         </AppBar>
       </div>
