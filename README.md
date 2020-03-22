@@ -2,9 +2,9 @@
 
 ---
 
-[-> LoginsAdmin on Heroku](https://loginsadmin.herokuapp.com){:target="_blank"}
+[-> LoginsAdmin on Heroku](https://loginsadmin.herokuapp.com)
 
-[-> LoginsAdmin on Netlify](https://jonatandb-loginsadmin.netlify.com){:target="_blank"}
+[-> LoginsAdmin on Netlify](https://jonatandb-loginsadmin.netlify.com)
 
 ---
 
