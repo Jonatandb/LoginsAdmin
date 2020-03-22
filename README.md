@@ -1,6 +1,13 @@
-# LoginsAdmin
-Administrador de credenciales realizado durante mis prácticas con React para aprender a usar Material-UI.
+## Administrador de credenciales realizado durante mis prácticas con React.
 
-## Preview
-[![Jonatandb](preview.png?raw=true "LoginsAdmin")](https://loginsadmin.herokuapp.com)
+---
 
+[-> LoginsAdmin on Heroku](https://loginsadmin.herokuapp.com)
+
+[-> LoginsAdmin on Netlify](https://jonatandb-loginsadmin.netlify.com)
+
+---
+
+![Jonatandb](preview.png?raw=true "LoginsAdmin")
+
+---

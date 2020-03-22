@@ -17,7 +17,7 @@ const styles = () => ({
 function BotonAgregar(props) {
     const { classes, onClick } = props;
     return (
-        <React.Fragment>
+        <>
             <Fab
                 variant="extended"
                 color="primary"
@@ -28,7 +28,7 @@ function BotonAgregar(props) {
                 <AddIcon className={classes.extendedIcon} />
                 Agregar
             </Fab>
-        </React.Fragment>
+        </>
     );
 }
 
