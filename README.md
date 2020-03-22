@@ -1,10 +1,8 @@
 ## Administrador de credenciales realizado durante mis prácticas con React.
 
----
+![Heroku](https://heroku-badge.herokuapp.com/?app=LoginsAdmin) <a href="https://loginsadmin.herokuapp.com" target="_blank">-> LoginsAdmin on Heroku</a>
 
-<a href="https://loginsadmin.herokuapp.com" target="_blank">-> LoginsAdmin on Heroku</a>
-
-<a href="https://jonatandb-loginsadmin.netlify.com" target="_blank">-> LoginsAdmin on Netlify</a>
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4d04187f-ea5e-4380-9b0d-371747a0a1d2/deploy-status)](https://app.netlify.com/sites/loginsadmin/deploys) <a href="https://loginsadmin.netlify.com" target="_blank">-> LoginsAdmin on Netlify</a>
 
 ---
 
